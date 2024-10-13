@@ -1,0 +1,99 @@
+{
+  "name": "llm-dev-mate",
+  "displayName": "LLM DevMate",
+  "description": "Calculate number of tokens in your repo, Copy entire file content to clipboard to be pasted as prompt.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:llmDevMate.countTokensInFile",
+    "onCommand:llmDevMate.countTokensInSelection",
+    "onCommand:llmDevMate.countTokensInRepo"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "LLM DevMate Configuration",
+      "properties": {
+        "llmllmDevMate.selectedModel": {
+          "type": "string",
+          "default": "gpt-3.5-turbo",
+          "enum": [
+            "gpt-3.5-turbo",
+            "gpt-4",
+            "text-davinci-003"
+          ],
+          "description": "Select the model to use for token calculation"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "llmDevMate.countTokensInFile",
+        "title": "Count Tokens in Current File"
+      },
+      {
+        "command": "llmDevMate.countTokensInSelection",
+        "title": "Count Tokens in Selection"
+      },
+      {
+        "command": "llmDevMate.countTokensInRepo",
+        "title": "Count Tokens in Repository"
+      },
+      {
+        "command": "llmDevMate.copyRepoToClipboard",
+        "title": "Copy Entire Repo to Clipboard (Excluding .gitignore)"
+      },
+      {
+        "command": "llmDevMate.copyCurrentFileToClipboard",
+        "title": "Copy Current File to Clipboard"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "llmDevMate.countTokensInFile",
+          "when": "editorLangId == 'python'",
+          "group": "navigation"
+        },
+        {
+          "command": "llmDevMate.countTokensInSelection",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "llmDevMate.copyRepoToClipboard",
+          "group": "navigation"
+        },
+        {
+          "command": "llmDevMate.copyCurrentFileToClipboard",
+          "when": "resourceLangId != ''",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.94.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.11.1"
+  },
+  "dependencies": {
+    "clipboardy": "^4.0.0",
+    "ignore": "^6.0.2",
+    "tiktoken": "^1.0.17"
+  }
+}
