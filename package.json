@@ -10,7 +10,7 @@
     "url": "https://github.com/hassan11196/llm-dev-mate"
   },
   "engines": {
-    "vscode": "^1.94.0"
+    "vscode": "^1.61.0"
   },
   "categories": [
     "Other"
