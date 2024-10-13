@@ -22,4 +22,6 @@ export default [{
         "constructor-super": "warn",
         "valid-typeof": "warn",
     },
+    ignores: ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.vscode/**", "**/.vscode-test/**", "**/.github/**", "**/coverage/**"],
+
 }];

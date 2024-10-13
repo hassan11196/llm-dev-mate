@@ -1,5 +1,6 @@
 {
   "name": "llm-dev-mate",
+  "publisher": "elancore",
   "displayName": "LLM DevMate",
   "description": "Calculate number of tokens in your repo, Copy entire file content to clipboard to be pasted as prompt.",
   "version": "0.0.1",
