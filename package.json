@@ -3,7 +3,7 @@
   "publisher": "elancore",
   "displayName": "LLM DevMate",
   "description": "Calculate number of tokens in your repo, Copy entire file content to clipboard to be pasted as prompt.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icon": "images/llm-dev-mate-logo.jpg",
   "repository": {
     "type": "git",
@@ -92,7 +92,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.8",
     "@types/node": "20.x",
-    "@types/vscode": "^1.94.0",
+    "@types/vscode": "^1.61.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
     "eslint": "^9.11.1"
